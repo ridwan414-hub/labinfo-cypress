@@ -2,7 +2,7 @@
 
 Follow these steps to integrate e2e test with cypress in the `labinfo-backend` and `labinfo-frontend` branches:
 
-1. Git clone the repo and run `npm install cypress --save-dev`
+1. Git clone the repo and run `npm install`
 
 2. To Test with ui command `npm run cypress:open` and in command line `npm run test:e2e`
 
