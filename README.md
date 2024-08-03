@@ -4,13 +4,29 @@ Follow these steps to integrate e2e test with cypress in the `labinfo-backend` a
 
 1. Git clone the repo and run `npm install`
 
-2. To Test with ui command `npm run cypress:open` and in command line `npm run test:e2e`
+2. create file `cypress.config.js` with
 
-3. Click 'E2E Testing' in cypress pop-up-window and select the file to run the test
+   `const { defineConfig } = require("cypress");
 
-4. Go to the `labinfo-backend/features/updated-lab-info-backend` branch and run the command `nodemon server.js` to start the backend server.
+   module.exports = defineConfig({
+   e2e: {
+   setupNodeEvents(on, config) {
+   // implement node event listeners here
+   },
+   env: {
+   USER_NAME: '$YOUR_USER_NAME',
+        PASSWORD: '$YOUR_PASSWORD',
+   }
+   },
+   });`
 
-5. Switch to the `labinfo-frontend/features/integrate-google-oauth` branch and run `npm run dev` to start the frontend development server.
+3. To Test with ui command `npm run cypress:open` and in command line `npm run test:e2e`
+
+4. Click 'E2E Testing' in cypress pop-up-window and select the file to run the test
+
+5. Go to the `labinfo-backend/features/updated-lab-info-backend` branch and run the command `nodemon server.js` to start the backend server.
+
+6. Switch to the `labinfo-frontend/features/integrate-google-oauth` branch and run `npm run dev` to start the frontend development server.
 
 That's it! You have successfully integrated Google OAuth in your project.
 
